@@ -1,12 +1,17 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   <title>Authorization</title>
 </head>
 <body>
-  <a href="/login/vk-oauth2">
-    Регистрация
-  </a>
+  <div class="container container-authorization">
+    <a class="auth-link" href="/login/vk-oauth2">
+      Авторизоваться через vk
+    </a>
+  </div>
 </body>
 </html>

@@ -1,10 +1,35 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   <title>Profile</title>
 </head>
 <body>
-  привет
+  <div class="container container-profile">
+    <div class="greeting">
+        Привет, {{ user.first_name}} {{user.last_name}}!
+    </div>
+
+    <div class="friends">
+      {% if friends_list %}
+        <p class="friends-list__title">Это - твои пять рандомных друзей</p>
+      <ul class="friends-list">
+        {% for friend in friends_list %}
+          <li class="friend-list__item">
+            <img class="item__img" src="{{friend.photo_100}}" alt="">
+            <p class="item__name">
+              {{ friend.first_name }} {{ friend.last_name }}
+            </p>
+          </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+        <p class="friends-list__title"> Список друзей пуст :(</p>
+      {% endif %}
+    </div>
+  </div>
 </body>
 </html>
