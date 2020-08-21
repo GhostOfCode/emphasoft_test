@@ -9,7 +9,7 @@
 
 ## Настройки программы
 Для успешной работы веб приложения:
-1. Создайте приложение по ссылке https://vk.com/editapp?act=create
+1. [Создайте приложение vk]
 
 1. Скопируйте содержимое settings.py.default в settings.py <br>
 `cp emphasoft_test/emphasoft_test/settings.py.default emphasoft_test/emphasoft_test/settings.py`
@@ -28,3 +28,5 @@
 
 ## Запуск веб-приложения
 `./emphasoft_test/manage.py runserver`
+
+[Создайте приложение vk]: https://vk.com/editapp?act=create
