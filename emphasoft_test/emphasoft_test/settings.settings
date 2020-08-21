@@ -10,12 +10,7 @@ SOCIAL_AUTH_VK_OAUTH2_KEY = ''
 SOCIAL_AUTH_VK_OAUTH2_SECRET = ''
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['2']
 
-SOCIAL_AUTH_VK_APP_KEY = ''
-SOCIAL_AUTH_VK_APP_SECRET = ''
-
 TOKEN = ''
-VK_APP_ID = ''
-
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -47,6 +42,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'emphasoft_test.urls'
+LOGIN_REDIRECT_URL = '/'
 
 TEMPLATES = [
     {
@@ -66,7 +62,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'emphasoft_test.wsgi.application'
-
 
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
@@ -106,7 +101,7 @@ AUTHENTICATION_BACKENDS = ( # добавить в settings.settings
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 

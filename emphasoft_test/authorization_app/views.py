@@ -6,6 +6,8 @@ import vk_api
 
 class Authorization(View):
     def get(self, request):
+        if request.user.is_authenticated:
+            return redirect(to='/')
         return render(request, 'authorization_app/authorization.html')
 
 
@@ -14,7 +16,7 @@ class Profile(View):
         if not request.user.is_authenticated:
             return redirect(to='/auth')
         friends = self.get_friends_list(request.user)
-        return render(request, 'profile.html', context={'friends_list': friends})
+        return render(request, 'authorization_app/profile.html', context={'friends_list': friends})
 
     def get_friends_list(self, user):
         social = user.social_auth.get()

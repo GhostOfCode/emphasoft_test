@@ -74,6 +74,10 @@ html, body {
     text-decoration: none;
 }
 
+.item__name:hover {
+    text-decoration: #fff;
+}
+
 .item__img {
     border-radius: 50%;
     margin-bottom: 15px;
