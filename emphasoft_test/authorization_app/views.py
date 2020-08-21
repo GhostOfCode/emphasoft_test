@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import Context
 from django.views import View
 
@@ -12,8 +12,9 @@ class Authorization(View):
 
 class Profile(View):
     def get(self, request):
+        if not request.user.is_authenticated:
+            return redirect(to='/auth')
         friends = self.get_friends_list(request.user)
-        q = Context(friends)
         return render(request, 'profile.html', context={'friends_list': friends})
 
     def get_friends_list(self, user):
@@ -22,4 +23,3 @@ class Profile(View):
         api = vk_api.VkApi(token=access_token, login=user.username).get_api()
         friends_list = api.friends.get(order='random', count=5, fields=['photo_100'])
         return friends_list['items']
-

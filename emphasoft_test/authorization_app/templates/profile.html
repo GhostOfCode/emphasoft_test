@@ -20,9 +20,9 @@
         {% for friend in friends_list %}
           <li class="friend-list__item">
             <img class="item__img" src="{{friend.photo_100}}" alt="">
-            <p class="item__name">
+            <a class="item__name" href="https://vk.com/id{{friend.id}}" target="_blank">
               {{ friend.first_name }} {{ friend.last_name }}
-            </p>
+            </a>
           </li>
         {% endfor %}
       </ul>

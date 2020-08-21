@@ -69,6 +69,11 @@ html, body {
     flex-direction: column;
 }
 
+.item__name {
+    color: #fff;
+    text-decoration: none;
+}
+
 .item__img {
     border-radius: 50%;
     margin-bottom: 15px;
