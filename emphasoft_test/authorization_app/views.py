@@ -1,5 +1,4 @@
 from django.shortcuts import render, redirect
-from django.template import Context
 from django.views import View
 
 import vk_api
