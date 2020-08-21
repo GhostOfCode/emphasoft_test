@@ -10,8 +10,6 @@ SOCIAL_AUTH_VK_OAUTH2_KEY = ''
 SOCIAL_AUTH_VK_OAUTH2_SECRET = ''
 SOCIAL_AUTH_VK_OAUTH2_SCOPE = ['2']
 
-TOKEN = ''
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -73,7 +71,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -93,8 +90,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-AUTHENTICATION_BACKENDS = ( # добавить в settings.settings
-    'social_core.backends.vk.VKOAuth2',          # бекенд авторизации через ВКонтакте
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.vk.VKOAuth2',
     'django.contrib.auth.backends.ModelBackend',
 )
 
