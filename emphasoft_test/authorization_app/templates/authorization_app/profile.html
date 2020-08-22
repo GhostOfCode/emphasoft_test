@@ -9,17 +9,17 @@
 </head>
 <body>
   <div class="container container-profile">
-    <div class="greeting">
+    <p class="greeting">
         Привет, {{ user.first_name}} {{user.last_name}}!
-    </div>
+    </p>
 
     <div class="friends">
       {% if friends_list %}
-        <p class="friends-list__title">Это - твои пять рандомных друзей</p>
+        <p class="friends__title">Это - твои пять рандомных друзей</p>
       <ul class="friends-list">
         {% for friend in friends_list %}
-          <li class="friend-list__item">
-            <img class="item__img" src="{{friend.photo_100}}" alt="">
+          <li class="friends-list__item">
+            <img class="item__avatar" src="{{friend.photo_100}}" alt="">
             <a class="item__name" href="https://vk.com/id{{friend.id}}" target="_blank">
               {{ friend.first_name }} {{ friend.last_name }}
             </a>
@@ -27,7 +27,7 @@
         {% endfor %}
       </ul>
       {% else %}
-        <p class="friends-list__title"> Список друзей пуст :(</p>
+        <p class="friends__title"> Список друзей пуст :(</p>
       {% endif %}
     </div>
   </div>
