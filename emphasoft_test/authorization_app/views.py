@@ -15,8 +15,8 @@ class Profile(View):
     def get(self, request):
         if not request.user.is_authenticated:
             return redirect(to='/auth')
-        friends = self.get_friends_list(request.user)
-        return render(request, 'authorization_app/profile.html', context={'friends_list': friends})
+        friends_list = self.get_friends_list(request.user)
+        return render(request, 'authorization_app/profile.html', context={'friends_list': friends_list})
 
     def get_friends_list(self, user):
         social = user.social_auth.get()
