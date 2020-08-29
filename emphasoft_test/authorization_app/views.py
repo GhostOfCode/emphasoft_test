@@ -1,14 +1,12 @@
 from django.shortcuts import render, redirect
 from django.views import View
+from django.contrib.auth.views import LoginView
 
 import vk_api
 
 
-class Authorization(View):
-    def get(self, request):
-        if request.user.is_authenticated:
-            return redirect(to='/')
-        return render(request, 'authorization_app/authorization.html')
+class Authorization(LoginView):
+    template_name = 'authorization_app/authorization.html'
 
 
 class Profile(View):
